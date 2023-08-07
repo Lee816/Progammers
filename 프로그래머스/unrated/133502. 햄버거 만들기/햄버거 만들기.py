@@ -4,13 +4,8 @@ def solution(ingredient):
     for x in ingredient:
         item.append(x)
         if len(item) > 3:
-            if item[-1] == 1:
-                if item[-2] == 3:
-                    if item[-3] == 2:
-                        if item[-4] == 1:
-                            item.pop()
-                            item.pop()
-                            item.pop()
-                            item.pop()
-                            answer += 1
+            if item[-1:-5:-1] == [1,3,2,1]:
+                answer += 1
+                for _ in range(4):
+                    item.pop()
     return answer
